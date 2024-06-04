@@ -1,0 +1,12 @@
+{
+  "name": "await-interaction-response",
+  "repository": "https://github.com/vercel-labs/await-interaction-response.git",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Vercel Team",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./await-interaction-response.js"
+  }
+}

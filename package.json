@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/vercel-labs/await-interaction-response.git",
+  "license": "MIT",
+  "private": true,
+  "author": "Vercel Team (https://vercel.com/)",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "clean": "turbo run clean",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && pnpm publish -r"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.3",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.3"
+  }
+}

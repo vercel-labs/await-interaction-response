@@ -1,0 +1,5 @@
+.label {
+  margin: 8px;
+  display: flex;
+  gap: 8px;
+}
