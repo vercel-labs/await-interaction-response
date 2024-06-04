@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { ReactNode, startTransition, useEffect, useState } from 'react';
 import interactionResponse from 'await-interaction-response';
 import s from './page.module.css';
 
@@ -15,6 +15,14 @@ function Label({ children }: { children: ReactNode }) {
 
 export default function Home() {
   const [value, setValue] = useState('');
+  const [val, setSlowValue] = useState('');
+
+  useEffect(() => {
+    if (val) {
+      blockMainThread(200);
+    }
+  }, [val]);
+
   return (
     <main>
       <h2>Input events</h2>
@@ -42,16 +50,18 @@ export default function Home() {
           />
         </Label>
         <Label>
-          Block main thread for 200ms on key down and then remove the input:
+          Block main thread for 200ms on change with useEffect and
+          startTransition:
           <input
             type="text"
-            onKeyDown={(e) => {
-              blockMainThread(200);
-              (e.target as any).remove();
+            value={val}
+            onChange={async (e) => {
+              startTransition(() => {
+                setSlowValue(e.target.value);
+              });
             }}
           />
         </Label>
-        <div id="fill"></div>
       </div>
     </main>
   );
