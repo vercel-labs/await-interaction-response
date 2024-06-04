@@ -25,26 +25,24 @@ export default function Home() {
 
   return (
     <main>
-      <h2>Input events</h2>
+      <h2>Interact with the inputs below to compare INP scores</h2>
+      <p>Open the devtools console to see logs in how the INP score changes.</p>
       <div className="parent">
         <Label>
           Block main thread for 200ms on change using
-          await-interaction-response:
+          <a
+            href="https://github.com/vercel-labs/await-interaction-response"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            await-interaction-response:
+          </a>
           <input
             type="text"
             value={value}
             onChange={async (e) => {
               setValue(e.target.value);
               await interactionResponse();
-              blockMainThread(200);
-            }}
-          />
-        </Label>
-        <Label>
-          Block main thread for 200ms on change:
-          <input
-            type="text"
-            onChange={async (e) => {
               blockMainThread(200);
             }}
           />
@@ -62,6 +60,24 @@ export default function Home() {
             }}
           />
         </Label>
+        <Label>
+          Block main thread for 200ms on change:
+          <input
+            type="text"
+            onChange={async (e) => {
+              blockMainThread(200);
+            }}
+          />
+        </Label>
+        <p>
+          For this particular use case, where the main thread is blocked by JS
+          execution during the interaction, await-interaction-response is more
+          responsive.
+        </p>
+        <p>
+          For more complex UI updates, startTransition is likely the way to go
+          (or a combination of the two).
+        </p>
       </div>
     </main>
   );
