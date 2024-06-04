@@ -21,7 +21,7 @@ importers:
   apps/next-app:
     dependencies:
       await-interaction-response:
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/await-interaction-response
       next:
         specifier: 14.2.3
@@ -52,7 +52,11 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
-  packages/await-interaction-response: {}
+  packages/await-interaction-response:
+    devDependencies:
+      typescript:
+        specifier: ^5.3.3
+        version: 5.4.5
 
 packages:
 

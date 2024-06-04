@@ -6,7 +6,22 @@
   "author": "Vercel Team",
   "description": "",
   "type": "module",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
   "exports": {
-    ".": "./interaction-response.js"
+    ".": {
+      "types": "./src/interaction-response.ts",
+      "default": "./dist/interaction-response.js"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/interaction-response.js"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }
