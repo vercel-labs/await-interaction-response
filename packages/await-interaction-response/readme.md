@@ -1,6 +1,6 @@
 # await-interaction-response
 
-Improve [INP (Interaction to Next Paint)](https://web.dev/articles/inp) by allowing the browser to paint before blocking the main thread. You can test how it works in the live demo.
+Improve [INP (Interaction to Next Paint)](https://web.dev/articles/inp) by allowing the browser to paint before blocking the main thread. You can test how it works in the [live demo](https://await-interaction-response.vercel.app/).
 
 ## How to use
 
