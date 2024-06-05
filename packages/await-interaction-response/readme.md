@@ -38,7 +38,7 @@ import interactionResponse from 'await-interaction-response';
 
 ### When should I use or not use this?
 
-Generally, add `await interactionResponse()` in places where you're having INP issues and when your UI's utilities for INP (like React's [`startTransition`](https://react.dev/reference/react/useTransition#starttransition)) don't suit your use case.
+Generally, add `await interactionResponse()` in places where you're having INP issues and when your UI library solutions (like React's [`startTransition`](https://react.dev/reference/react/useTransition#starttransition)) aren't enough for your use case.
 
 So a first step is to monitor for INP issues in development with tools like the [Vercel Toolbar](https://vercel.com/changelog/interaction-timing-tool) or the [chrome web-vitals extension](https://chromewebstore.google.com/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en) and
 in production with services like [Vercel Speed Insights](https://github.com/vercel/speed-insights) that do [RUM](https://en.wikipedia.org/wiki/Real_user_monitoring).
