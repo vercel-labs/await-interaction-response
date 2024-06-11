@@ -10,6 +10,10 @@
     "dev": "tsc -w",
     "build": "tsc"
   },
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts"
+  ],
   "exports": {
     ".": {
       "types": "./src/interaction-response.ts",
