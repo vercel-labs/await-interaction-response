@@ -1,7 +1,7 @@
 {
   "name": "await-interaction-response",
   "repository": "https://github.com/vercel-labs/await-interaction-response.git",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Vercel Team",
   "description": "",
